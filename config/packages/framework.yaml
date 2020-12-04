@@ -1,0 +1,28 @@
+# see https://symfony.com/doc/current/reference/configuration/framework.html
+framework:
+    secret: '%env(APP_SECRET)%'
+    session:
+        handler_id: null
+        cookie_secure: auto
+        cookie_samesite: lax
+
+    php_errors:
+        log: true
+
+    assets:
+        packages:
+            js:
+                base_path: 'resources/js'
+            css:
+                base_path: 'resources/css'
+            bootstrap:
+                base_urls: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'
+            bootstrap_theme:
+                base_urls: 'https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css'
+            bootstrap_js:
+                base_urls: 'https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'
+            datatables_js:
+                base_urls: 'https://cdn.datatables.net/v/bs/dt-1.10.22/datatables.min.js'
+            datatables_css:
+                base_urls: 'https://cdn.datatables.net/v/bs/dt-1.10.22/datatables.min.css'
+

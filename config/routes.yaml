@@ -1,0 +1,6 @@
+# route all unknown routes to the default
+index:
+  path: /{req}
+  defaults: { _controller: 'App\Controller\EntryPointController::index' }
+  requirements:
+    req: ".*"

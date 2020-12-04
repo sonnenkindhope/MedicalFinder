@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Gemeinschaftspraxis ABC{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ absolute_url(asset('','bootstrap')) }}" crossorigin="anonymous" />
+        <link rel="stylesheet" href="{{ absolute_url(asset('','bootstrap_theme')) }}" crossorigin="anonymous" />
+        {% block stylesheets %}{% endblock %}
+
+        <script src="{{ absolute_url(asset('jquery-3.5.1.min.js', 'js')) }}"></script>
+        <script src="{{ absolute_url(asset('','bootstrap_js')) }}"></script>
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

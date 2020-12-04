@@ -1,0 +1,70 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ absolute_url(asset('main.css','css')) }}" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ absolute_url(asset('','datatables_css')) }}" crossorigin="anonymous" />
+{% endblock %}
+
+ {% block javascripts %}
+     <script src="{{ absolute_url(asset('search.js','js')) }}"></script>
+     <script src="{{ absolute_url(asset('','datatables_js')) }}"></script>
+ {% endblock %}
+
+
+
+{% block body %}
+    <header class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <span class="navbar-brand">Gemeinschaftspraxis ABC</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="infoContent">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    Matt und angeschlagen? Finden Sie den richtigen Arzt für Ihr Symptom für eine schnelle Behandlung.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section >
+        <div class="container">
+            <div class="form-group form-group-sm">
+                <form class="form-inline md-form mr-auto mb-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Symptom..." aria-label="Symptom" id="searchTerm">
+                                <div id="possibleTerms"></div>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-primary" type="submit" id="search">Suchen</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="form-group form-group-sm" id="resultContainer">
+                <div class="col-sm-10">
+                    <table id="searchResult" class="display" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th width="33%">Arzt</th>
+                            <th width="33%">Spezialgebiet</th>
+                            <th width="33%">Telefonnummer</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% block loader %}
+        <div id="loader"> </div>
+    {% endblock %}
+{% endblock %}
